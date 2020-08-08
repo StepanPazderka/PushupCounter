@@ -16,7 +16,7 @@ struct ContentView: View {
 
     func ConvertDate(date: Date) -> String {
         let formatter1 = DateFormatter()
-        formatter1.dateStyle = .short
+        formatter1.dateStyle = .long
         return formatter1.string(from: date)
     }
     
@@ -25,16 +25,15 @@ struct ContentView: View {
             Section {
                 NavigationView {
                     List {
-                        ForEach(sessions, id: \.id) { session in
+                        ForEach(sessions, id: \.self) { session in
                             HStack {
-                                    VStack {
-                                        Text("\(session.count)")
-                                        Text("\(self.ConvertDate(date: session.date!))").font(.system(size: 10))
-                                }
+                                Text("\(session.count)")
+                                Text("\(self.ConvertDate(date: session.date!))").font(.system(size: 10))
                             }
                         }
                     }
                 }
+                .navigationBarTitle("Pushup Counter")
             }
             Spacer()
             Section {
