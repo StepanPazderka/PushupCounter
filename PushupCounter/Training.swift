@@ -10,11 +10,13 @@ import SwiftUI
 
 struct Training: View {
     @Environment(\.managedObjectContext) var moc
-    
+//    @Environment(\.isPresented) private var isPresented
     @State private var counter: Int = 0
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack {
+            Spacer()
             Section {
                 Text("\(counter)")
                     .fontWeight(.heavy)
@@ -30,6 +32,7 @@ struct Training: View {
             Section {
                 Button(action: {
                     self.finishTraining()
+                    self.presentationMode.wrappedValue.dismiss()
                 }) {
                     Text("Finish Training")
                 }
@@ -42,7 +45,7 @@ struct Training: View {
     func finishTraining() {
         let currentDate = Date()
         
-        let TrainingSession = Session(context: self.moc)
+        let TrainingSession     = Session(context: self.moc)
         TrainingSession.count   = Int32(self.counter)
         TrainingSession.date    = currentDate
         TrainingSession.id      = UUID()

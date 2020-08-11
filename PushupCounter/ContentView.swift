@@ -52,7 +52,7 @@ struct ContentView: View {
                 Button(action: {
                     self.showingTrainingScreen.toggle()
                 }) {
-                    Text("Test").padding()
+                    Text("Start training").padding()
                 }
             }
         }
