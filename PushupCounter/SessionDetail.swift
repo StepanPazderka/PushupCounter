@@ -8,19 +8,29 @@
 
 import CoreData
 import SwiftUI
-//
-//enum Callout: String {
-//    case 0: ["Really?", "Am I a joke to you?"]
-//}
+
 
 struct SessionDetail: View {
+    func callout(count: Int) -> String {
+        if (count == 0) {
+            return ["Is this a joke for you?", "What?", "Are you serious?"].randomElement()!
+        }
+        else if (count < 5) {
+            return ["At least you tried"].randomElement()!
+        }
+        else if (count < 10) {
+            return ["Nice one, keep it up"].randomElement()!
+        }
+        return "Wow!"
+    }
+    
     let session: Session
     @State var count: Int = 0
     
     
     var body: some View {
         return VStack {
-            Text("Wow!")
+            Text("\(callout(count: count))")
             Text("\(count)")
                 .font(.largeTitle)
         }
