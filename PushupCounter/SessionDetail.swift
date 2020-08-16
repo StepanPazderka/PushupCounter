@@ -16,7 +16,7 @@ struct SessionDetail: View {
             return ["Is this a joke for you?", "What?", "Are you serious?"].randomElement()!
         }
         else if (count < 5) {
-            return ["At least you tried"].randomElement()!
+            return ["At least you tried", "I bet you can do better 🙂"].randomElement()!
         }
         else if (count < 10) {
             return ["Nice one, keep it up"].randomElement()!
