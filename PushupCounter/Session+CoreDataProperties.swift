@@ -18,6 +18,9 @@ extension Session {
     }
 
     @NSManaged public var count: Int32
+    /**
+        Holds date of a session
+     */
     @NSManaged public var date: Date?
     @NSManaged public var id: UUID?
 

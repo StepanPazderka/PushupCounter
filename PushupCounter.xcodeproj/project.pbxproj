@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		AA7423E224DA082900B67782 /* Training.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7423E124DA082900B67782 /* Training.swift */; };
 		AA80D66224DAF90200751207 /* Session+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA80D66024DAF90200751207 /* Session+CoreDataClass.swift */; };
 		AA80D66324DAF90200751207 /* Session+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA80D66124DAF90200751207 /* Session+CoreDataProperties.swift */; };
+		AA97934C24E869D700E158F0 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = AA97934B24E869D700E158F0 /* SwiftUICharts */; };
+		AA97934E24E86AD600E158F0 /* SessionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA97934D24E86AD600E158F0 /* SessionDetail.swift */; };
 		AA98561524D9C560005811FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA98561424D9C560005811FD /* AppDelegate.swift */; };
 		AA98561724D9C560005811FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA98561624D9C560005811FD /* SceneDelegate.swift */; };
 		AA98561A24D9C560005811FD /* PushupCounter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA98561824D9C560005811FD /* PushupCounter.xcdatamodeld */; };
@@ -23,6 +25,7 @@
 		AA7423E124DA082900B67782 /* Training.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Training.swift; sourceTree = "<group>"; };
 		AA80D66024DAF90200751207 /* Session+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Session+CoreDataClass.swift"; path = "PushupCounter/Session+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AA80D66124DAF90200751207 /* Session+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Session+CoreDataProperties.swift"; path = "PushupCounter/Session+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AA97934D24E86AD600E158F0 /* SessionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetail.swift; sourceTree = "<group>"; };
 		AA98561124D9C560005811FD /* PushupCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushupCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA98561424D9C560005811FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA98561624D9C560005811FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA97934C24E869D700E158F0 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +79,7 @@
 				AA98561824D9C560005811FD /* PushupCounter.xcdatamodeld */,
 				AA98561F24D9C565005811FD /* Preview Content */,
 				AA7423E124DA082900B67782 /* Training.swift */,
+				AA97934D24E86AD600E158F0 /* SessionDetail.swift */,
 			);
 			path = PushupCounter;
 			sourceTree = "<group>";
@@ -103,6 +108,9 @@
 			dependencies = (
 			);
 			name = PushupCounter;
+			packageProductDependencies = (
+				AA97934B24E869D700E158F0 /* SwiftUICharts */,
+			);
 			productName = PushupCounter;
 			productReference = AA98561124D9C560005811FD /* PushupCounter.app */;
 			productType = "com.apple.product-type.application";
@@ -131,6 +139,9 @@
 				Base,
 			);
 			mainGroup = AA98560824D9C560005811FD;
+			packageReferences = (
+				AA97934A24E869D700E158F0 /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = AA98561224D9C560005811FD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -163,6 +174,7 @@
 				AA80D66224DAF90200751207 /* Session+CoreDataClass.swift in Sources */,
 				AA98561C24D9C560005811FD /* ContentView.swift in Sources */,
 				AA98561724D9C560005811FD /* SceneDelegate.swift in Sources */,
+				AA97934E24E86AD600E158F0 /* SessionDetail.swift in Sources */,
 				AA7423E224DA082900B67782 /* Training.swift in Sources */,
 				AA80D66324DAF90200751207 /* Session+CoreDataProperties.swift in Sources */,
 			);
@@ -358,6 +370,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AA97934A24E869D700E158F0 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AA97934B24E869D700E158F0 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA97934A24E869D700E158F0 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		AA98561824D9C560005811FD /* PushupCounter.xcdatamodeld */ = {

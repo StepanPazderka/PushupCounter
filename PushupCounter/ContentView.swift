@@ -36,9 +36,11 @@ struct ContentView: View {
                 NavigationView {
                     List {
                         ForEach(sessions, id: \.self) { session in
+                            NavigationLink(destination: SessionDetail(session: session)) {
                             HStack {
                                 Text("\(session.count)")
                                 Text("\(self.ConvertDate(date: session.date!))").font(.system(size: 10))
+                            }
                             }
                         }
                         .onDelete(perform: deleteSession)
