@@ -23,7 +23,6 @@ struct SessionDetail: View {
             Text("Wow!")
             Text("\(count)")
                 .font(.largeTitle)
-            
         }
         .onAppear() {
             self.count = self.session.value(forKey: "count") as? Int ?? 0
