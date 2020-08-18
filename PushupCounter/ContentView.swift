@@ -14,7 +14,7 @@ struct ContentView: View {
     @FetchRequest(entity: Session.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Session.date, ascending: false)]) var sessions: FetchedResults<Session>
     
     @State private var showingTrainingScreen = false
-
+    
     func deleteSession(at offsets: IndexSet) {
         for offset in offsets {
             let session = sessions[offset]
@@ -31,35 +31,42 @@ struct ContentView: View {
     }
     
     var body: some View {
-        VStack {
-            Section {
-                NavigationView {
-                    List {
-                        ForEach(sessions, id: \.self) { session in
-                            NavigationLink(destination: SessionDetail(session: session)) {
+        TabView {
+            NavigationView {
+                List {
+                    ForEach(sessions, id: \.self) { session in
+                        NavigationLink(destination: SessionDetail(session: session)) {
                             HStack {
                                 Text("\(session.count)")
                                 Text("\(self.ConvertDate(date: session.date!))").font(.system(size: 10))
                             }
-                            }
                         }
-                        .onDelete(perform: deleteSession)
                     }
-                    .navigationBarTitle("Pushup Counter")
-                    .navigationBarItems(leading: EditButton())
+                    .onDelete(perform: deleteSession)
                 }
-            }
-            Spacer()
-            Section {
-                Button(action: {
+                .navigationBarTitle("Pushup Counter")
+                .navigationBarItems(leading: EditButton(), trailing: Button(action: {
                     self.showingTrainingScreen.toggle()
                 }) {
-                    Text("Start training").padding()
-                }
+                    Image(systemName: "plus")
+                })
             }
-        }
-        .sheet(isPresented: $showingTrainingScreen) {
+            .sheet(isPresented: $showingTrainingScreen) {
                 Training().environment(\.managedObjectContext, self.moc)
+            }
+                
+                
+            .tabItem {
+                Image(systemName: "list.bullet")
+                Text("Training Sessions")
+            }
+            NavigationView {
+                Text("Here will be settings")
+            }
+            .tabItem {
+                Image(systemName: "slider.horizontal.3")
+                Text("Settings")
+            }
         }
     }
 }

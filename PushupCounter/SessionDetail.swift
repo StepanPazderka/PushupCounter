@@ -11,14 +11,17 @@ import SwiftUI
 
 
 struct SessionDetail: View {
-    func callout(count: Int) -> String {
-        if (count == 0) {
+    /**
+        Creates a callout based on number of pushups
+     */
+    func callout(pushupCount: Int) -> String {
+        if (pushupCount == 0) {
             return ["Is this a joke for you?", "What?", "Are you serious?"].randomElement()!
         }
-        else if (count < 5) {
+        else if (pushupCount < 5) {
             return ["At least you tried", "I bet you can do better 🙂"].randomElement()!
         }
-        else if (count < 10) {
+        else if (pushupCount < 10) {
             return ["Nice one, keep it up"].randomElement()!
         }
         return "Wow!"
@@ -30,7 +33,7 @@ struct SessionDetail: View {
     
     var body: some View {
         return VStack {
-            Text("\(callout(count: count))")
+            Text("\(callout(pushupCount: count))")
             Text("\(count)")
                 .font(.largeTitle)
         }
