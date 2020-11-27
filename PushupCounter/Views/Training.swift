@@ -50,7 +50,11 @@ struct Training: View {
         TrainingSession.date    = currentDate
         TrainingSession.id      = UUID()
         
-        try? self.moc.save()
+        do {
+            try self.moc.save()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }
 

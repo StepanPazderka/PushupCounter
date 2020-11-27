@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		AA7423E224DA082900B67782 /* Training.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7423E124DA082900B67782 /* Training.swift */; };
 		AA80D66224DAF90200751207 /* Session+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA80D66024DAF90200751207 /* Session+CoreDataClass.swift */; };
 		AA80D66324DAF90200751207 /* Session+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA80D66124DAF90200751207 /* Session+CoreDataProperties.swift */; };
-		AA97934C24E869D700E158F0 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = AA97934B24E869D700E158F0 /* SwiftUICharts */; };
 		AA97934E24E86AD600E158F0 /* SessionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA97934D24E86AD600E158F0 /* SessionDetail.swift */; };
 		AA98561524D9C560005811FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA98561424D9C560005811FD /* AppDelegate.swift */; };
 		AA98561724D9C560005811FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA98561624D9C560005811FD /* SceneDelegate.swift */; };
@@ -23,8 +22,8 @@
 
 /* Begin PBXFileReference section */
 		AA7423E124DA082900B67782 /* Training.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Training.swift; sourceTree = "<group>"; };
-		AA80D66024DAF90200751207 /* Session+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Session+CoreDataClass.swift"; path = "PushupCounter/Session+CoreDataClass.swift"; sourceTree = "<group>"; };
-		AA80D66124DAF90200751207 /* Session+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Session+CoreDataProperties.swift"; path = "PushupCounter/Session+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AA80D66024DAF90200751207 /* Session+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AA80D66124DAF90200751207 /* Session+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AA97934D24E86AD600E158F0 /* SessionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetail.swift; sourceTree = "<group>"; };
 		AA98561124D9C560005811FD /* iOS & iPadOS PushupCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS & iPadOS PushupCounter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA98561424D9C560005811FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,7 +41,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA97934C24E869D700E158F0 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +50,6 @@
 		AA98560824D9C560005811FD = {
 			isa = PBXGroup;
 			children = (
-				AA80D66024DAF90200751207 /* Session+CoreDataClass.swift */,
-				AA80D66124DAF90200751207 /* Session+CoreDataProperties.swift */,
 				AA98561324D9C560005811FD /* PushupCounter */,
 				AA98561224D9C560005811FD /* Products */,
 			);
@@ -70,16 +66,14 @@
 		AA98561324D9C560005811FD /* PushupCounter */ = {
 			isa = PBXGroup;
 			children = (
-				AA98561824D9C560005811FD /* PushupCounter.xcdatamodeld */,
+				AAF8E9CF257132160088EF5E /* Model */,
+				AAF8E9D0257132290088EF5E /* Views */,
+				AA98561D24D9C565005811FD /* Assets.xcassets */,
 				AA98561424D9C560005811FD /* AppDelegate.swift */,
 				AA98561624D9C560005811FD /* SceneDelegate.swift */,
-				AA98561B24D9C560005811FD /* ContentView.swift */,
-				AA98561D24D9C565005811FD /* Assets.xcassets */,
-				AA98562224D9C565005811FD /* LaunchScreen.storyboard */,
 				AA98562524D9C565005811FD /* Info.plist */,
+				AA98562224D9C565005811FD /* LaunchScreen.storyboard */,
 				AA98561F24D9C565005811FD /* Preview Content */,
-				AA7423E124DA082900B67782 /* Training.swift */,
-				AA97934D24E86AD600E158F0 /* SessionDetail.swift */,
 			);
 			path = PushupCounter;
 			sourceTree = "<group>";
@@ -90,6 +84,26 @@
 				AA98562024D9C565005811FD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AAF8E9CF257132160088EF5E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AA80D66024DAF90200751207 /* Session+CoreDataClass.swift */,
+				AA80D66124DAF90200751207 /* Session+CoreDataProperties.swift */,
+				AA98561824D9C560005811FD /* PushupCounter.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AAF8E9D0257132290088EF5E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA98561B24D9C560005811FD /* ContentView.swift */,
+				AA7423E124DA082900B67782 /* Training.swift */,
+				AA97934D24E86AD600E158F0 /* SessionDetail.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,7 +123,6 @@
 			);
 			name = PushupCounter;
 			packageProductDependencies = (
-				AA97934B24E869D700E158F0 /* SwiftUICharts */,
 			);
 			productName = PushupCounter;
 			productReference = AA98561124D9C560005811FD /* iOS & iPadOS PushupCounter.app */;
@@ -140,7 +153,6 @@
 			);
 			mainGroup = AA98560824D9C560005811FD;
 			packageReferences = (
-				AA97934A24E869D700E158F0 /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = AA98561224D9C560005811FD /* Products */;
 			projectDirPath = "";
@@ -370,25 +382,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		AA97934A24E869D700E158F0 /* XCRemoteSwiftPackageReference "ChartView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AppPear/ChartView";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.5.4;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		AA97934B24E869D700E158F0 /* SwiftUICharts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AA97934A24E869D700E158F0 /* XCRemoteSwiftPackageReference "ChartView" */;
-			productName = SwiftUICharts;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		AA98561824D9C560005811FD /* PushupCounter.xcdatamodeld */ = {
