@@ -1,5 +1,5 @@
 # PushupCounter
-Custom project for counting pushups. App is targeting iOS and iPadOS. It uses SwiftUI for its User Interface and CoreData
+Custom project for counting pushups. App is targeting <strong>iOS</strong> and <strong>iPadOS</strong>. It uses <strong>SwiftUI</strong> for its User Interface and <strong>CoreData</strong>
 
 
 <p align="center">
