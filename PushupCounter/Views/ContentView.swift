@@ -12,7 +12,6 @@ struct ContentView: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(entity: Session.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Session.date, ascending: false)]) var sessions: FetchedResults<Session>
-    
     @State private var showingTrainingScreen = false
     
     func deleteSession(at offsets: IndexSet) {
@@ -52,7 +51,7 @@ struct ContentView: View {
                 })
             }
             .sheet(isPresented: $showingTrainingScreen) {
-                Training().environment(\.managedObjectContext, self.moc)
+                TrainingView().environment(\.managedObjectContext, self.moc)
             }
                 
                 
