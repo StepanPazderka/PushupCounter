@@ -29,7 +29,9 @@ struct TrainingView: View {
                     .frame(width: 250, height: 250)
                 }
                 .scaleEffect(animationAmount)
-                
+                .animation(
+                    Animation.interpolatingSpring(stiffness: 100, damping: 80)
+                )
                 .onChange(of: animationAmount) { value in
                           animationAmount = 1
                     print("Changed")
